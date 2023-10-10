@@ -1,0 +1,261 @@
+@media screen and (max-width:991px) {
+   .main-nav.logo img{
+    width: 100%;
+    height: auto;
+   }
+   .home {
+    width:100%;
+    height: auto;
+   }
+   .home .row .col img{
+      display: none;
+      margin-bottom: 20px;
+   }
+    .nav-toggle{
+      display: block;
+      margin-right:25px;
+      font-size: 18px;
+    }
+    .navbar{
+        position: absolute;
+        background-color:rgb(245, 245, 245);
+        left: -100%;
+        top: 100%;
+        width:100%;
+        padding-block:30px;
+        transition: 0.4s ease-in-out;
+    }
+    .navbar.active{
+       left:0;
+    }
+     .navbar ul li a{
+        color:black;
+        font-weight: 600;
+     }
+    .navbar ul{
+        flex-direction: column;
+        margin-left: 50px;
+    }
+     
+    .career-content{
+        flex-wrap: wrap-reverse;
+      }
+      .career-content img{
+        margin: 20px;
+        width:100%;
+      }
+      .career-content p{
+        text-align: inherit;
+      }
+      .test-content p{
+        text-align: inherit;
+      }
+
+    .eventin{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .event-content{
+        max-width: calc(25%-10px);
+      }
+      
+    .purpose h2{
+        font-size: 1.675rem;
+        font-weight: 300;
+    }
+    .purpose-container p{
+        font-size: 1.1rem;
+        
+    }
+    .purpose-content p{
+        font-size: 1rem;
+       text-align: inherit;
+    }
+    .learn{
+        width:auto;
+        font-size: 12px;
+    }
+    .learn span{
+        font-size: 10;
+    }
+    .test-content .qoute{
+        width: 6%;
+    }
+
+    .test-container{
+      display: block;
+    }
+    .test-container img{
+      position: relative;
+      left: 50%;
+    }
+    .test-name{
+      text-align:center;
+    }
+    .developer p{
+      font-size: 1rem;
+      
+    }
+  } 
+
+ 
+  @media screen and (max-width: 767px){
+    .home{
+        width: 100%;
+        margin-bottom: 20px;
+     }
+     .home .row .col img{
+        display: none;
+     }
+     .career-content{
+        flex-wrap: wrap-reverse;
+      }
+      .career-content img{
+        margin: 20px;
+        width:100%;
+      }
+      .learn{
+        font-size: auto;
+      }
+
+    .purpose-content{
+        flex-direction: column;
+        gap:30px;
+    }
+    .purpose-content .qoute{
+        width:6%;
+    }
+    .purpose-content img{
+        width:100%;
+        height: auto;
+    }
+    .eventin{
+        margin-left: 0;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+    .developer-content{
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+    }
+
+    .developer .item{
+        flex-basis: 45%;
+    }
+    .accordion button .icon {
+      position: absolute;
+      top: 18px;
+      right:0px;
+      left:280px;
+      width: 22px;
+      height: 22px;
+      border: 1px solid;
+      border-radius: 22px;
+    }
+    .accordion-title{
+      font-size: 1rem;
+    }
+    .container {
+      max-width:100%;
+      padding:35px;
+    }
+    .accordion button[aria-expanded='true'] + .accordion-content {
+      max-height: 10em;
+    }
+    .accordion .accordion-content {
+      overflow:scroll;
+    }
+
+  }
+  @media screen and (max-width:479px){
+    .home {
+        width:100%;
+        margin-top: 20px;
+       }
+       .home .row .col img{
+        display: none;
+     }
+     .col h1{ 
+      font-size: 35px;
+     } 
+     .col .intro-p{
+      font-size: 35px;
+     }
+     .col p{
+      font-size: 16px;
+     }
+     .purpose{
+        padding-block: 20px;
+        margin-top:80px;
+        width: 100%;
+     }
+    .eventin{
+        margin-left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: calc(100%-10px);
+      }
+      .developer-content{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .developer .item{
+        flex-basis: 80%;
+    }
+    .developer .leads{
+        font-size: 1.67rem;
+        font-weight: 300;
+        margin-bottom: 5px;
+    }
+    .developer .dev{
+        font-weight: 400;
+        font-size: 1rem;
+    }
+    .career-content p{
+        font-size: 1rem;
+        word-spacing: -2px;
+       }
+       .career-content h3{
+        font-size: 1.675rem;
+        font-weight: 300;
+       }
+       .test-container img{
+        display: block;
+       }
+       .test-content p{
+        font-size: 1rem;
+       }
+       .accordion button .icon {
+        left:300px;
+      }
+}
+@media screen and (max-width:325px) {
+  .accordion button .icon {
+    left:228px;
+  }
+}
+@media screen and (min-width: 700px){
+    .footer-right > *{
+        flex: 1;
+    }
+    .footer-left{
+        flex: 1 0px;
+    }
+    .footer-right{
+        flex: 2 0px;
+    }
+  }
+  
+  @media(max-width: 600px){
+    .footer{
+        padding: 15px;
+    }
+    main{
+        font-size: 55px;
+    }
+  }
+  

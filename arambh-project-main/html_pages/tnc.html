@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/c81f536b56.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T&C | Aarambh</title>
+    <link rel="stylesheet" href="css_pages/tnc.css">
+    <link rel="stylesheet" href="css_pages/NavFooterForEveryPage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/x-icon" href="arambh-template.jpg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+        <!-- navbar starts -->
+        <nav>
+            <div class="main-nav" >
+              <!-- <a href="/arambh-project/index.html" class="logo"> 
+                   <img src="arambh.png">
+                 </a> -->
+                 <div class="logo">
+                  <img src="arambh.png" onclick="window.location.href='/arambh-project/index.html';" >
+                 </div>
+              <div class="navbar" id="navbar">          
+                <ul>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="goals.html" class="nav__link">Goals</a></li>
+                    <li class="nav__item"><a href="https://discord.gg/SNjR5HY5" class="nav__link">Community</a></li>
+                    <li class="nav__item"><a href="event.html" class="nav__link">Events</a></li>
+                    <li class="nav__item"><a href="mailto:arambh.community@gmail.com" class="nav__link">Contact Us</a></li>
+                    <li class="nav__item"><a href="/arambh-project/html_pages/joinAarambh.html"><button>Join Aarambh<span>&#10230;</span></button></a></li>                       
+                </ul> 
+              </div> 
+              <a href="#" class="nav-toggle" id="nav-toggle">
+                <i class="fa-sharp fa-solid fa-bars"></i>
+              </a>
+            </div>
+        </nav>
+          <!-- navbar ends -->
+    <section class="cont">
+    <div>
+    <h1>Terms and Conditions-Aarambh</h1>
+    <p>Acceptance of Terms: By accessing and using the Aarambh website ("<span class="link"><a href="https://www.aarambh.rf.gd" target="_blank">Aarambh's website-></a></span>"), you agree to comply with these Terms and Conditions.<br>
+        </p>
+        <h3>Intellectual Property:</h3>
+        <p>All content on the Website, including articles, tutorials, code snippets, and images, are the intellectual property of Aarambh and are protected by copyright laws.</p>
+        <h3>User Responsibilities:</h3>
+        <p>Users must use the Website for lawful purposes and agree not to engage in any activities that may infringe upon the rights of others or violate applicable laws.</p>
+        <h3>Accuracy of Information:</h3>
+        <p>While we strive to provide accurate and up-to-date information, Aarambh does not guarantee the accuracy, completeness, or reliability of the content on the Website.</p>
+        <h3>Third-Party Links:</h3>
+        <p>The Website may contain links to third-party websites for additional resources. Aarambh is not responsible for the content,availability, or privacy practices of these external sites.</p>
+    
+        <h3>Limitation of Liability:</h3>
+        <p>Aarambh shall not be liable for any damages or losses arising from the use or inability to use the Website or any content therein.<p>
+            <h3>Modification and Termination:</h3>
+            <p>Aarambh reserves the right to modify, suspend, or terminate the Website or any part thereof, at its sole discretion, without prior notice.<p>
+                <h3>Governing Law:</h3>
+                <p>These Terms and Conditions are governed by and construed in accordance with the laws of Jurisdiction, and any disputes shall be subject to the exclusive jurisdiction of the courts in that jurisdiction.<p>
+                    <h3>Entire Agreement:</h3>
+                    <p>These Terms and Conditions constitute the entire agreement between the user and Aarambh, superseding any prior agreements or understandings.<p>        
+                        <h3>Contact Information:</h3>
+                        <p>By using the Aarambh Website, you acknowledge that you have read, understood, and agreed to abide by these Terms and Conditions.</p>
+    </div> 
+    </section> 
+     <!--Footer section-->
+ <footer class="footer">
+    <div class="footer-left">
+      <img src="arambh-white.png" alt="Aarambh-logo" onclick="window.location.href='/arambh-project/index.html';">
+       <p> Aarambh is a website that provides resources and tutorials informations for <br> computer science and programming 
+          enthusiasts,assisting them in <br>their learning journey.
+        </p>
+        <div class="Socials">
+          <a href="https://github.com/Project-Arambh" target="_blank" class="github"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/aarambh-the-gateway-to-coding/" target="_blank" class="ln"><i class="fab fa-linkedin"></i></a>
+          </div>
+      </div>
+    </footer>
+    <script>
+           //for navbar
+        const toggleButton= document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('navbar');
+
+        toggleButton.addEventListener('click', () => {
+        navLinks.classList.toggle('active')
+         })
+        //navbar ends
+    </script>  
+</body>
+</html>

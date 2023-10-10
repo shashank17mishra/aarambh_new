@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c81f536b56.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css_pages/event.css">
+    
+    <link rel="icon" type="image/x-icon" href="arambh-template.jpg">
+    <link rel="stylesheet" href="css_pages/NavFooterForEveryPage.css">
+    <title>Solution Page</title>
+    <style>
+        .solution-block {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+     <!-- navbar starts -->
+     <nav>
+        <div class="main-nav" >
+          <!-- <a href="/arambh-project/index.html" class="logo"> 
+               <img src="arambh.png">
+             </a> -->
+             <div class="logo">
+              <img src="arambh.png" onclick="window.location.href='/arambh-project/index.html';" >
+             </div>
+          <div class="navbar" id="navbar">          
+            <ul>
+              <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+              <li class="nav__item"><a href="goals.html" class="nav__link">Goals</a></li>
+              <li class="nav__item"><a href="https://discord.gg/SNjR5HY5" class="nav__link">Community</a></li>
+              <li class="nav__item"><a href="event.html" class="nav__link">Events</a></li>
+              <li class="nav__item dropdown">
+                  <a href="#" class="nav__link">Courses</a>
+                  <ul class="dropdown-menu">
+                      <li><a href="dsa_page.html">DSA Questions</a></li>
+                  </ul>
+              </li>
+              <li class="nav__item"><a href="mailto:arambh.community@gmail.com" class="nav__link">Contact Us</a></li>
+              <li class="nav__item"><a href="joinAarambh.html"><button>Join Aarambh<span>&#10230;</span></button></a></li>
+          </ul>
+          
+          </div> 
+          <a href="#" class="nav-toggle" id="nav-toggle">
+            <i class="fa-sharp fa-solid fa-bars"></i>
+          </a>
+        </div>
+      </nav>
+      <!-- navbar ends -->
+      <div class="solution-block">
+        <h2>Solution</h2>
+        <pre id="solution-code">Loading solution...</pre>
+    </div>
+    
+    <script>
+        // Get the block number from the URL query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const blockNumber = urlParams.get('block');
+    
+        // Define the solutions for each block
+        const solutions = {
+            '1': `
+    public class LargestElement_array {  
+    public static void main(String[] args) {  
+  
+        //Initialize array  
+        int [] arr = new int [] {25, 11, 7, 75, 56};  
+        //Initialize max with first element of array.  
+        int max = arr[0];  
+        //Loop through the array  
+        for (int i = 0; i < arr.length; i++) {  
+            //Compare elements of array with max  
+           if(arr[i] > max)  
+               max = arr[i];  
+        }  
+        System.out.println("Largest element present in given array: " + max);  
+    }  
+}  
+            `,
+            '2':` // Recursive approach to check if an
+// Array is sorted or not
+
+#include <stdio.h>
+
+// Function that returns 0 if a pair
+// is found unsorted
+int arraySortedOrNot(int arr[], int n)
+{
+	// Array has one or no element or the
+	// rest are already checked and approved.
+	if (n == 1 || n == 0)
+		return 1;
+
+	// Unsorted pair found (Equal values allowed)
+	if (arr[n - 1] < arr[n - 2])
+		return 0;
+
+	// Last pair was sorted
+	// Keep on checking
+	return arraySortedOrNot(arr, n - 1);
+}
+
+// Driver code
+int main()
+{
+	int arr[] = { 20, 23, 23, 45, 78, 88 };
+	int n = sizeof(arr) / sizeof(arr[0]);
+	if (arraySortedOrNot(arr, n))
+		printf("Yes\n");
+	else
+		printf("No\n");
+
+	return 0;
+}
+`,
+'3':` // Recursive approach to check if an
+// Array is sorted or not
+
+class CkeckSorted {
+	// Function that returns 0 if a pair
+	// is found unsorted
+	static int arraySortedOrNot(int arr[], int n)
+	{
+		// Array has one or no element or the
+		// rest are already checked and approved.
+		if (n == 1 || n == 0)
+			return 1;
+
+		// Unsorted pair found (Equal values allowed)
+		if (arr[n - 1] < arr[n - 2])
+			return 0;
+
+		// Last pair was sorted
+		// Keep on checking
+		return arraySortedOrNot(arr, n - 1);
+	}
+
+	// main function
+	public static void main(String[] args)
+	{
+		int arr[] = { 20, 23, 23, 45, 78, 88 };
+		int n = arr.length;
+		if (arraySortedOrNot(arr, n) != 0)
+			System.out.println("Yes");
+		else
+			System.out.println("No");
+	}
+}
+`,
+'4':`import java.util.*;
+public class Main {
+   public static void main(String[] args){
+      
+      //Declare and initialize the array elements
+      int array[] = {128, 0, 99, 67, 50, 0, 29, 7, 0};
+      
+      //getting length of an array
+      int n = array.length;
+      
+      //calling user defined function
+      func(array, n);
+   }
+   
+   //user defined method
+   public static void func(int array[], int n) {
+   
+      //sorting the array elements
+      Arrays.sort(array);
+      System.out.println("Elements of array after moving all the zeros to the end of array: ");
+      
+      //prints array using the for loop
+      for (int i = n-1; i >= 0; i--) {
+         System.out.print(array[i] + " ");
+      }
+   }
+}`,
+'5':`public class Missing
+{
+    static int getMissingNo (int a[], int n)
+    {
+        int i, total;
+     	total  = (n + 1) * (n + 2) / 2;
+     	for ( i = 0; i < n; i++)
+     	total -= a[i];
+     	return total;
+    }
+    public static void main(String... s)
+    {
+      	int a[ ] = {1, 2, 4, 5, 6};
+      	int miss = getMissingNo(a, 5);
+      	System.out.println("The number missing is :"+miss);
+    }
+}` ,
+'6':`// Java Program to find sum of elements in a given array
+class Test {
+	static int arr[] = { 12, 3, 4, 15 };
+
+	// method for sum of elements in an array
+	static int sum()
+	{
+		int sum = 0; // initialize sum
+		int i;
+
+		// Iterate through all elements and add them to sum
+		for (i = 0; i < arr.length; i++)
+			sum += arr[i];
+
+		return sum;
+	}
+
+	// Driver method
+	public static void main(String[] args)
+	{
+		System.out.println("Sum of given array is "
+						+ sum());
+	}
+}
+`,
+'7':``,
+'8':`// C++ code for the above approach
+#include <iostream>
+using namespace std;
+
+int maxProfit(int prices[], int n)
+{
+	int buy = prices[0], max_profit = 0;
+	for (int i = 1; i < n; i++) {
+
+		// Checking for lower buy value
+		if (buy > prices[i])
+			buy = prices[i];
+
+		// Checking for higher profit
+		else if (prices[i] - buy > max_profit)
+			max_profit = prices[i] - buy;
+	}
+	return max_profit;
+}
+
+// Driver Code
+int main()
+{
+	int prices[] = { 7, 1, 5, 6, 4 };
+	int n = sizeof(prices) / sizeof(prices[0]);
+	int max_profit = maxProfit(prices, n);
+	cout << max_profit << endl;
+	return 0;
+}
+`,
+'9':`void setMatrixZeros(int A[][], int M, int N)  
+{  
+   int temp[M][N]  
+   for (i = 0 to M-1)  
+        for (j = 0 to N-1)  
+            temp[i][j] = 1  
+   for(i = 0 to M - 1)  
+    {  
+        for (j = 0 to N - 1)  
+        {  
+            if (A[i][j] == 0)  
+            {  
+                for (k = 0 to M - 1)  
+                    temp[k][j] = 0  
+                for (k = 0 to N - 1)  
+                    temp[i][k] = 0  
+            }  
+        }  
+    }  
+   for (i = 0 to M-1)  
+        for (j = 0 to N-1)  
+            arr[i][j] = temp[i][j]   
+}  `,
+'10':`
+RotateMatrix.java
+
+public class RotateMatrix  
+{  
+//function to rotate the matrix by 90 degrees clockwise  
+static void rightRotate(int matrix[][],int n)  
+{  
+//determines the transpose of the matrix  
+for(int i=0;i<n;i++)  
+{  
+for(int j=i;j<n;j++)  
+{  
+int temp = matrix[i][j];  
+matrix[i][j] = matrix[j][i];  
+matrix[j][i] = temp;  
+}  
+}  
+  
+//then we reverse the elements of each row  
+for(int i=0;i<n;i++)  
+{  
+//logic to reverse each row i.e 1D Array.    
+int low = 0, high = n-1;  
+while(low < high)  
+{  
+int temp = matrix[i][low];  
+matrix[i][low] = matrix[i][high];  
+matrix[i][high] = temp;  
+low++;  
+high--;  
+}  
+}  
+  
+System.out.println("The Right Rotated Matrix is: ");  
+//prints matrix after rotation  
+for(int i=0;i<3;i++)  
+{  
+for(int j=0;j<3;j++)  
+{  
+System.out.print(matrix[i][j]+" " +"\t");  
+}  
+System.out.println();  
+}  
+}  
+//driver code  
+public static void main(String args[])  
+{  
+int n=3;  
+//initializing a 3*3 matrix  
+int matrix[][] = new int[][]{ {1,2,3}, {4,5,6} , {7,8,9} };  
+System.out.println("The Original Matrix is: ");  
+//prints matrix  
+for(int i=0;i<3;i++)  
+{  
+for(int j=0;j<3;j++)  
+{  
+//prints the elements of the matrix      
+System.out.print(matrix[i][j]+" " +"\t");  
+}  
+System.out.println();  
+}  
+//function calling  
+rightRotate(matrix, n);  
+}  
+}   
+`,
+'11':`import java.util.*;
+public class Main {
+	// function to count subarrays with sum K
+	public static int getCountSubarraysWithSumK(List<Integer> arr, int K) {
+		int n = arr.size();
+		int count = 0;
+		// iterate through all possible subarrays
+		for (int i = 0; i < n; i++) {
+			for (int j = i; j < n; j++) {
+				// calculate sum of subarray
+				int sum = 0;
+				for (int k = i; k <= j; k++) {
+					sum += arr.get(k);
+				}
+				// increment count if sum is equal to K
+				count += (sum == K ? 1 : 0);
+			}
+		}
+		return count;
+	}
+
+	public static void main(String[] args) {
+		int k = 6;
+		List<Integer> arr = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 1, 5));
+		// call function and print result
+		int ans = getCountSubarraysWithSumK(arr, k);
+		System.out.println("Count of subarrays with sum k is " + ans);
+	}
+}
+`,
+'12':`public static int[] findMaximumSubArray(int[] nums){
+    int curMax = nums[0];
+    for(int i = 0; i < nums.length; i++) {
+        int sum = nums[i];
+        curMax = Math.max(sum,  curMax);
+        
+        for(int j = i + 1; j < nums.length; j++) {
+            sum += nums[j];
+            curMax = Math.max(sum,  curMax);
+        }
+    }
+    return curMac;`,
+'13':``,
+'14':`import java.util.Arrays;
+ 
+ public class MergeArrayProgram 
+ {
+     private static int[] mergeArray(int[] arrayA, int[] arrayB)
+     {
+         int[] mergedArray = new int[arrayA.length + arrayB.length];
+          
+         int i=0, j=0, k=0;
+          
+         while (i < arrayA.length && j < arrayB.length)
+         {
+             if (arrayA[i] < arrayB[j]) 
+             {
+                 mergedArray[k] = arrayA[i];
+                 i++;
+                 k++;
+             } 
+             else
+             {
+                 mergedArray[k] = arrayB[j];
+                 j++;
+                 k++;
+             }
+         } 
+                  
+         while (i < arrayA.length) 
+         {
+             mergedArray[k] = arrayA[i];
+             i++;
+             k++;
+         } 
+                  
+         while (j < arrayB.length) 
+         {
+             mergedArray[k] = arrayB[j];
+             j++;
+             k++;
+         } 
+              
+         return mergedArray;
+     }
+      
+     public static void main(String[] args) 
+     {
+         int[] arrayA = new int[] {-7, 12, 17, 29, 41, 56, 79};
+          
+         int[] arrayB = new int[] {-9, -3, 0, 5, 19};
+          
+         int[] mergedArray = mergeArray(arrayA, arrayB);
+          
+         System.out.println("Array A : "+Arrays.toString(arrayA));
+          
+         System.out.println("Array B : "+Arrays.toString(arrayB));
+          
+         System.out.println("Merged Array : "+Arrays.toString(mergedArray));
+     }
+ }`,
+ '15':``,
+ '16':`import java.lang.*;
+
+class LinkedList {
+    Node head;
+
+    // Node Class
+    class Node{
+        int data;
+        Node next;
+
+        Node(int x) // parameterized constructor
+        {
+            data = x;
+            next = null;
+        }
+    }
+    public Node insertBeginning(int data)
+    {
+        Node newNode = new Node(data);
+        newNode.next = head;
+        head = newNode;
+        System.out.println("inserted "+data);
+        return head;
+    }
+
+
+    public void display()
+    {
+        System.out.println();
+        Node node = head;
+        //as linked list will end when Node reaches Null
+        while(node!=null)
+        {
+            System.out.print(node.data + " ");
+            node = node.next;
+        }
+        System.out.println();
+    }
+}
+public class Main
+{
+    public static void main(String args[])
+    {
+        LinkedList ll = new LinkedList();
+
+        ll.insertBeginning(5);
+        ll.insertBeginning(4);
+        ll.insertBeginning(3);
+        ll.insertBeginning(2);
+        ll.insertBeginning(1);
+
+        ll.display();
+
+    }
+}`,
+'17':`// A complete working Java program 
+// to demonstrate deletion 
+// in singly linked list 
+class LinkedList { 
+	Node head; // head of list 
+
+	/* Linked list Node*/
+	class Node { 
+		int data; 
+		Node next; 
+		Node(int d) 
+		{ 
+			data = d; 
+			next = null; 
+		} 
+	} 
+
+	/* Given a key, deletes the first 
+	occurrence of key in 
+	* linked list */
+	void deleteNode(int key) 
+	{ 
+		// Store head node 
+		Node temp = head, prev = null; 
+
+		// If head node itself holds the key to be deleted 
+		if (temp != null && temp.data == key) { 
+			head = temp.next; // Changed head 
+			return; 
+		} 
+
+		// Search for the key to be deleted, keep track of 
+		// the previous node as we need to change temp.next 
+		while (temp != null && temp.data != key) { 
+			prev = temp; 
+			temp = temp.next; 
+		} 
+
+		// If key was not present in linked list 
+		if (temp == null) 
+			return; 
+
+		// Unlink the node from linked list 
+		prev.next = temp.next; 
+	} 
+
+	/* Inserts a new Node at front of the list. */
+	public void push(int new_data) 
+	{ 
+		Node new_node = new Node(new_data); 
+		new_node.next = head; 
+		head = new_node; 
+	} 
+
+	/* This function prints contents of linked list starting 
+	from the given node */
+	public void printList() 
+	{ 
+		Node tnode = head; 
+		while (tnode != null) { 
+			System.out.print(tnode.data + " "); 
+			tnode = tnode.next; 
+		} 
+	} 
+
+	/* Driver program to test above functions. Ideally this 
+	function should be in a separate user class. It is kept 
+	here to keep code compact */
+	public static void main(String[] args) 
+	{ 
+		LinkedList llist = new LinkedList(); 
+
+		llist.push(7); 
+		llist.push(1); 
+		llist.push(3); 
+		llist.push(2); 
+
+		System.out.println(" 
+Created Linked list is:"); 
+		llist.printList(); 
+
+		llist.deleteNode(1); // Delete node with data 1 
+
+		System.out.println( 
+			" 
+Linked List after Deletion of 1:"); 
+		llist.printList(); 
+	} 
+}
+`,
+'18':`//Java program to find nth node from end of linked list
+public class LinkedList 
+{
+	Node head; 
+	class Node 
+	{
+		int data;
+		Node next;
+		Node(int d)
+		{
+			data = d;
+			next = null;
+		}
+	}
+	void printNthFromEnd(int n)
+	{
+		int len = 0;
+		Node temp = head;
+	    while (temp != null) 
+	    {
+			temp = temp.next;
+			len++;
+		}
+		if (len < n)
+			return;
+		temp = head;
+		for (int i = 1; i < len - n + 1; i++)
+			temp = temp.next;
+		System.out.println(n+"th node from the end is "+temp.data);
+	}
+	public void add(int newData)
+	{
+		Node newNode = new Node(newData);
+		newNode.next = head;
+		head = newNode;
+	}
+	public static void main(String[] args)
+	{
+		LinkedList ll = new LinkedList();
+		ll.add(12);
+		ll.add(8);
+		ll.add(21);
+		ll.add(96);
+        ll.add(52);
+        ll.add(27);
+        ll.add(14);
+		ll.printNthFromEnd(6);
+	}
+}
+`,
+'19':``,
+'20':``,
+'21':`//Java Program to Find the Middle Element in a Linked List
+import java.util.LinkedList;
+public class Main 
+{
+  public static void main(String[] args)
+  {
+    // create a linked list using the LinkedList class
+    LinkedList<Integer> ll = new LinkedList<>();
+    // Add elements to LinkedList
+    ll.add(2);
+    ll.addFirst(3);
+    ll.addLast(5);
+    ll.addLast(6);
+    ll.addLast(8);
+    ll.addLast(13);
+    ll.addLast(18);
+    System.out.println("LinkedList: " + ll);
+    // access middle element
+    int middle = ll.get(ll.size()/2);
+    System.out.println("Middle Element: " + middle);
+    }
+}`,
+'22':`//Java Program to Find the Middle Element in a Linked List
+import java.util.LinkedList;
+public class Main 
+{
+  public static void main(String[] args)
+  {
+    // create a linked list using the LinkedList class
+    LinkedList<Integer> ll = new LinkedList<>();
+    // Add elements to LinkedList
+    ll.add(2);
+    ll.addFirst(3);
+    ll.addLast(5);
+    ll.addLast(6);
+    ll.addLast(8);
+    ll.addLast(13);
+    ll.addLast(18);
+    System.out.println("LinkedList: " + ll);
+    // access middle element
+    int middle = ll.get(ll.size()/2);
+    System.out.println("Middle Element: " + middle);
+    }
+}`,
+'23':`// Java program for reversing the linked list
+
+class LinkedList {
+
+	static Node head;
+
+	static class Node {
+
+		int data;
+		Node next;
+
+		Node(int d) {
+			data = d;
+			next = null;
+		}
+	}
+
+	/* Function to reverse the linked list */
+	Node reverse(Node node) {
+		Node prev = null;
+		Node current = node;
+		Node next = null;
+		while (current != null) {
+			next = current.next;
+			current.next = prev;
+			prev = current;
+			current = next;
+		}
+		node = prev;
+		return node;
+	}
+
+	// prints content of double linked list
+	void printList(Node node) {
+		while (node != null) {
+			System.out.print(node.data + " ");
+			node = node.next;
+		}
+	}
+
+	public static void main(String[] args) {
+		LinkedList list = new LinkedList();
+		list.head = new Node(85);
+		list.head.next = new Node(15);
+		list.head.next.next = new Node(4);
+		list.head.next.next.next = new Node(20);
+		
+		System.out.println("Given Linked list");
+		list.printList(head);
+		head = list.reverse(head);
+		System.out.println("");
+		System.out.println("Reversed linked list ");
+		list.printList(head);
+	}
+}
+
+
+// This code has been contributed by Mayank Jaiswal
+`,
+'24':``,
+'25':`// A Java recursive program to add two linked lists
+
+public class linkedlistATN 
+{
+	class node 
+	{
+		int val;
+		node next;
+
+		public node(int val) 
+		{
+			this.val = val;
+		}
+	}
+	
+	// Function to print linked list
+	void printlist(node head) 
+	{
+		while (head != null) 
+		{
+			System.out.print(head.val + " ");
+			head = head.next;
+		}
+	}
+
+	node head1, head2, result;
+	int carry;
+
+	/* A utility function to push a value to linked list */
+	void push(int val, int list) 
+	{
+		node newnode = new node(val);
+		if (list == 1) 
+		{
+			newnode.next = head1;
+			head1 = newnode;
+		} 
+		else if (list == 2) 
+		{
+			newnode.next = head2;
+			head2 = newnode;
+		} 
+		else
+		{
+			newnode.next = result;
+			result = newnode;
+		}
+
+	}
+
+	// Adds two linked lists of same size represented by
+	// head1 and head2 and returns head of the resultant 
+	// linked list. Carry is propagated while returning 
+	// from the recursion
+	void addsamesize(node n, node m) 
+	{
+		// Since the function assumes linked lists are of 
+		// same size, check any of the two head pointers
+		if (n == null)
+			return;
+
+		// Recursively add remaining nodes and get the carry
+		addsamesize(n.next, m.next);
+
+		// add digits of current nodes and propagated carry
+		int sum = n.val + m.val + carry;
+		carry = sum / 10;
+		sum = sum % 10;
+
+		// Push this to result list
+		push(sum, 3);
+
+	}
+
+	node cur;
+
+	// This function is called after the smaller list is 
+	// added to the bigger lists's sublist of same size. 
+	// Once the right sublist is added, the carry must be 
+	// added to the left side of larger list to get the 
+	// final result.
+	void propogatecarry(node head1) 
+	{
+		// If diff. number of nodes are not traversed, add carry
+		if (head1 != cur) 
+		{
+			propogatecarry(head1.next);
+			int sum = carry + head1.val;
+			carry = sum / 10;
+			sum %= 10;
+
+			// add this node to the front of the result
+			push(sum, 3);
+		}
+	}
+
+	int getsize(node head) 
+	{
+		int count = 0;
+		while (head != null) 
+		{
+			count++;
+			head = head.next;
+		}
+		return count;
+	}
+
+	// The main function that adds two linked lists 
+	// represented by head1 and head2. The sum of two 
+	// lists is stored in a list referred by result
+	void addlists() 
+	{
+		// first list is empty
+		if (head1 == null) 
+		{
+			result = head2;
+			return;
+		}
+
+		// first list is empty
+		if (head2 == null) 
+		{
+			result = head1;
+			return;
+		}
+
+		int size1 = getsize(head1);
+		int size2 = getsize(head2);
+
+		// Add same size lists
+		if (size1 == size2) 
+		{
+			addsamesize(head1, head2);
+		} 
+		else
+		{
+			// First list should always be larger than second list.
+			// If not, swap pointers
+			if (size1 < size2) 
+			{
+				node temp = head1;
+				head1 = head2;
+				head2 = temp;
+			}
+			int diff = Math.abs(size1 - size2);
+
+			// move diff. number of nodes in first list
+			node temp = head1;
+			while (diff-- >= 0) 
+			{
+				cur = temp;
+				temp = temp.next;
+			}
+
+			// get addition of same size lists
+			addsamesize(cur, head2);
+
+			// get addition of remaining first list and carry
+			propogatecarry(head1);
+		}
+			// if some carry is still there, add a new node to 
+			// the front of the result list. e.g. 999 and 87
+			if (carry > 0)
+				push(carry, 3);
+		
+	}
+
+	// Driver program to test above functions
+	public static void main(String args[])
+	{
+		linkedlistATN list = new linkedlistATN();
+		list.head1 = null;
+		list.head2 = null;
+		list.result = null;
+		list.carry = 0;
+		int arr1[] = { 9, 9, 9 };
+		int arr2[] = { 1, 8 };
+
+		// Create first list as 9->9->9
+		for (int i = arr1.length - 1; i >= 0; --i)
+			list.push(arr1[i], 1);
+
+		// Create second list as 1->8
+		for (int i = arr2.length - 1; i >= 0; --i)
+			list.push(arr2[i], 2);
+
+		list.addlists();
+
+		list.printlist(list.result);
+	}
+}
+
+// This code is contributed by Rishabh Mahrsee
+`,
+'26':``,
+ '27':`// Stack implementation in Java
+
+class Stack {
+
+  // store elements of stack
+  private int arr[];
+  // represent top of stack
+  private int top;
+  // total capacity of the stack
+  private int capacity;
+
+  // Creating a stack
+  Stack(int size) {
+    // initialize the array
+    // initialize the stack variables
+    arr = new int[size];
+    capacity = size;
+    top = -1;
+  }
+
+  // push elements to the top of stack
+  public void push(int x) {
+    if (isFull()) {
+      System.out.println("Stack OverFlow");
+
+      // terminates the program
+      System.exit(1);
+    }
+
+    // insert element on top of stack
+    System.out.println("Inserting " + x);
+    arr[++top] = x;
+  }
+
+  // pop elements from top of stack
+  public int pop() {
+
+    // if stack is empty
+    // no element to pop
+    if (isEmpty()) {
+      System.out.println("STACK EMPTY");
+      // terminates the program
+      System.exit(1);
+    }
+
+    // pop element from top of stack
+    return arr[top--];
+  }
+
+  // return size of the stack
+  public int getSize() {
+    return top + 1;
+  }
+
+  // check if the stack is empty
+  public Boolean isEmpty() {
+    return top == -1;
+  }
+
+  // check if the stack is full
+  public Boolean isFull() {
+    return top == capacity - 1;
+  }
+
+  // display elements of stack
+  public void printStack() {
+    for (int i = 0; i <= top; i++) {
+      System.out.print(arr[i] + ", ");
+    }
+  }
+
+  public static void main(String[] args) {
+    Stack stack = new Stack(5);
+
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+
+    System.out.print("Stack: ");
+    stack.printStack();
+
+    // remove element from stack
+    stack.pop();
+    System.out.println("\nAfter popping out");
+    stack.printStack();
+
+  }
+}`,
+'28':`import java.util.Arrays;
+import java.util.Stack;
+
+public class ReversinArrayUsingStack {
+   public static void main(String args[]) {
+      Stack<Integer> stack = new Stack<Integer>();
+      int[] myArray = {23, 93, 56, 92, 39};
+      int size = myArray.length;
+      for(int i=0; i<size; i++) {
+         stack.push(myArray[i]);
+      }
+      int[] reverseArray = new int[size];
+      for(int i=0; i<size; i++) {
+         reverseArray[i] = stack.pop();
+      }
+      System.out.println("Reversed array is ::"+Arrays.toString(reverseArray));
+   }
+}`,
+'29':`#include <bits/stdc++.h>
+using namespace std;
+
+void deleteMid(stack<int> &st ,int N){
+    int popped_elements = N-st.size();
+    if(popped_elements == (N/2)){
+        st.pop();
+        return;
+    }
+    int x=st.top();
+    st.pop();
+    deleteMid(st,N);
+    st.push(x);
+}
+
+void deleteMidElement(stack<int>& st)
+{
+    int N = st.size();
+    deleteMid(st,N);
+    
+}
+
+int main()
+{
+    stack<int> st;
+    st.push(6);
+    st.push(5);
+    st.push(4);
+    st.push(3);
+    st.push(2);
+    st.push(1);
+    
+
+    deleteMidElement(st);
+    
+    while (!st.empty()) {
+        cout << st.top() << " ";
+        st.pop();
+    }
+    
+    return 0;
+}`,
+'30':`import java.util.*;
+
+class Main
+{
+   public static void main(String[] args)
+   {
+      String expression;
+      int i, length;
+      char ch;
+      Scanner s = new Scanner(System.in);
+      
+      System.out.print("Enter the Expression: ");
+      expression = s.next();
+      
+      Stack<Character> stack = new Stack<Character>();
+      length = expression.length();
+      
+      for(i=0; i<length; i++)
+      {
+         ch = expression.charAt(i);
+         if(ch=='(' || ch=='{' || ch=='[')
+         {
+            stack.push(ch);
+         }
+         else if(ch==')')
+         {
+            if(stack.isEmpty() || stack.pop() != '(')
+            {
+               System.out.println("\nUnbalanced Parentheses!");
+               return;
+            }
+         }
+         else if(ch=='}')
+         {
+            if(stack.isEmpty() || stack.pop() != '{')
+            {
+               System.out.println("\nUnbalanced Parentheses!");
+               return;
+            }
+         }
+         else if(ch==']')
+         {
+            if(stack.isEmpty() || stack.pop() != '[')
+            {
+               System.out.println("\nUnbalanced Parentheses!");
+               return;
+            }
+         }
+      }
+      if(stack.isEmpty())
+         System.out.println("\nBalanced Parentheses.");
+   }
+}`,
+'31':`// Java program to sort a stack using 
+// a auxiliary stack.
+import java.util.*;
+
+class SortStack
+{
+	// This function return the sorted stack
+	public static Stack<Integer> sortstack(Stack<Integer> 
+											input)
+	{
+		Stack<Integer> tmpStack = new Stack<Integer>();
+		while(!input.isEmpty())
+		{
+			// pop out the first element
+			int tmp = input.pop();
+		
+			// while temporary stack is not empty and
+			// top of stack is lesser than temp
+			while(!tmpStack.isEmpty() && tmpStack.peek() 
+												< tmp)
+			{
+				// pop from temporary stack and 
+				// push it to the input stack
+			input.push(tmpStack.pop());
+			}
+			
+			// push temp in temporary of stack
+			tmpStack.push(tmp);
+		}
+		return tmpStack;
+	}
+	
+	// Driver Code
+	public static void main(String args[])
+	{
+		Stack<Integer> input = new Stack<Integer>();
+		input.add(34);
+		input.add(3);
+		input.add(31);
+		input.add(98);
+		input.add(92);
+		input.add(23);
+	
+		// This is the temporary stack
+		Stack<Integer> tmpStack=sortstack(input);
+		System.out.println("Sorted numbers are:");
+	
+		while (!tmpStack.empty())
+		{
+			System.out.print(tmpStack.pop()+" ");
+		} 
+	}
+}
+// This code is contributed by Danish Kaleem
+`,
+'32':`#include <stdio.h>  
+#define SIZE 20  
+ int array[SIZE];  // declaration of array type variable.  
+int top1 = -1;  
+int top2 = SIZE;  
+   
+//Function to push data into stack1  
+void push1 (int data)  
+{  
+// checking the overflow condition  
+  if (top1 < top2 - 1)  
+  {  
+      top1++;  
+    array[top1] = data;  
+  }  
+  else  
+  {  
+    printf ("Stack is full");  
+  }  
+}  
+// Function to push data into stack2  
+void push2 (int data)  
+{  
+// checking overflow condition    
+if (top1 < top2 - 1)  
+  {  
+    top2--;  
+    array[top2] = data;   
+  }  
+  else  
+  {  
+    printf ("Stack is full..\n");  
+  }  
+}  
+   
+//Function to pop data from the Stack1  
+void pop1 ()  
+{  
+// Checking the underflow condition   
+ if (top1 >= 0)  
+  {  
+    int popped_element = array[top1];  
+    top1--;  
+     
+    printf ("%d is being popped from Stack 1\n", popped_element);  
+  }  
+  else  
+  {  
+    printf ("Stack is Empty \n");  
+  }  
+}  
+// Function to remove the element from the Stack2  
+void pop2 ()  
+{  
+// Checking underflow condition    
+if (top2 < SIZE)  
+  {  
+      int popped_element = array[top2];  
+    top2--;  
+     
+    printf ("%d is being popped from Stack 1\n", popped_element);  
+  }  
+  else  
+  {  
+    printf ("Stack is Empty!\n");  
+  }  
+}  
+   
+//Functions to Print the values of Stack1  
+void display_stack1 ()  
+{  
+  int i;  
+  for (i = top1; i >= 0; --i)  
+  {  
+    printf ("%d ", array[i]);  
+  }  
+  printf ("\n");  
+}  
+// Function to print the values of Stack2  
+void display_stack2 ()  
+{  
+  int i;  
+  for (i = top2; i < SIZE; ++i)  
+  {  
+    printf ("%d ", array[i]);  
+  }  
+  printf ("\n");  
+}  
+   
+int main()  
+{  
+  int ar[SIZE];  
+  int i;  
+  int num_of_ele;  
+   
+  printf ("We can push a total of 20 values\n");  
+   
+  //Number of elements pushed in stack 1 is 10  
+  //Number of elements pushed in stack 2 is 10  
+   
+// loop to insert the elements into Stack1    
+for (i = 1; i <= 10; ++i)  
+  {  
+    push1(i);  
+    printf ("Value Pushed in Stack 1 is %d\n", i);  
+  }  
+// loop to insert the elements into Stack2.    
+for (i = 11; i <= 20; ++i)  
+  {  
+    push2(i);  
+    printf ("Value Pushed in Stack 2 is %d\n", i);  
+  }  
+   
+  //Print Both Stacks  
+  display_stack1 ();  
+ display_stack2 ();  
+   
+  //Pushing on Stack Full  
+  printf ("Pushing Value in Stack 1 is %d\n", 11);  
+  push1 (11);  
+   
+  //Popping All Elements from Stack 1  
+  num_of_ele = top1 + 1;  
+  while (num_of_ele)  
+  {  
+    pop1 ();  
+    --num_of_ele;  
+  }  
+   
+  // Trying to Pop the element From the Empty Stack  
+  pop1 ();  
+   
+  return 0;  
+}  `,
+
+
+
+};
+    
+        // Display the solution for the selected block
+        const solutionCode = document.getElementById('solution-code');
+        if (solutions[blockNumber]) {
+            solutionCode.textContent = solutions[blockNumber];
+        } else {
+            solutionCode.textContent = 'Solution not found.';
+        }
+    </script>
+    <footer class="footer">
+        <div class="footer-left">
+          <img src="arambh-white.png" alt="Aarambh-logo" onclick="window.location.href='/arambh-project/index.html';">
+           <p> Aarambh is a website that provides resources and tutorials informations for <br> computer science and programming 
+              enthusiasts,assisting them in <br>their learning journey.
+            </p>
+            <div class="Socials">
+              <a href="https://github.com/Project-Arambh" target="_blank" class="github"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/aarambh-the-gateway-to-coding/" target="_blank" class="ln"><i class="fab fa-linkedin"></i></a>
+              </div>
+          </div>
+        </footer>
+        <script>
+               //for navbar
+            const toggleButton= document.getElementById('nav-toggle');
+            const navLinks = document.getElementById('navbar');
+    
+            toggleButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active')
+             })
+            //navbar ends
+        </script>
+    
+</body>
+</html>
