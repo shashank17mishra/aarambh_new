@@ -1,11 +1,11 @@
 .heading,.array-problem,.linklist-problem,.stack-problem,.greedy-problem{
     text-align: center;
     font-family: poppins,sans-serif;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
     padding: 30px 0px;
-    border: 1px solid rgb(211, 209, 209);
-    box-shadow: 2px 2px 10px rgb(193, 188, 188);
+    /* border: 1px solid rgb(211, 209, 209); */
+    /* box-shadow: 2px 2px 2px rgb(193, 188, 188); */
 }
 .problem-anchor{
     margin-right: 10px;
